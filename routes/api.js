@@ -11,7 +11,7 @@ exports.convert = function(req, res){
 	words.forEach(function (w) {
 		var re = new RegExp("\\b"+w+"\\b", 'g');
 		console.log(re);
-		input = input.replace(re, repeat(w,"█"));
+		input = input.replace(re, repeat("█", w.length));
 	});
 	res.send(input);
 }
