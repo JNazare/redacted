@@ -1,17 +1,19 @@
+var words;
+
 function repeat (str, n) {
 	return Array(n + 1).join('\n').split('').map(function () { return str; }).join("");
-}
+};
 
 function censor (words, input, callback) {
+	console.log(input);
 	words.forEach(function (w) {
 		var re = new RegExp("\\b"+w+"\\b", 'gi');
-		input = input.replace(re, repeat("█", w.length));
+		input = input.replace(re, '<span class="block">'+w+'</span>'); //repeat("▓", w.length));
 	});
-	callback(input);
-}
+	callback(input.replace(/\n/g, "</br>"));
+};
 
 
-var words;
 
 $( document ).ready(function() {
 
@@ -19,13 +21,21 @@ $( document ).ready(function() {
 		words = res.list;
 	});
 
-
-	$("#styled").keyup( function(){
-		console.log(words);
-		censor(words, $("#styled").val(), function(newText){
-			$("#styled").val(newText);
-		});
+	$("#styled").click(function(){
+		$("#styled").attr('data-placeholder', "");
 	});
+
+	$("#styled").keyup( function(event){
+		$("#parent").height($("#styled")[0].scrollHeight + 20);
+		var input = $("#styled").clone().children().remove().end().text();
+		$("#styled").children().each(function(){
+			input = input + "\n" + $(this).text();
+		});
+		censor(words, input, function(newText){
+			$("#underlay").html(newText);
+		});
+    });
+
 
 	$("#button").click(function(){
 		$.post( '/api/convert', {text:$("#textarea").val()} , function(res){
@@ -36,14 +46,11 @@ $( document ).ready(function() {
 		});
 	});
 
+
 	$("#retry").click(function(){
 		$("#text").fadeOut(400, function(){
 				$("#main").fadeIn(400);
 			});
 	});
-
-
-	
-
 
 });

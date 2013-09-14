@@ -4,7 +4,7 @@
     <title>[Redacted]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Bubbler+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
     <link href="bootstrap/css/style.css" rel="stylesheet" media="screen">
   </head>
   <body>
@@ -19,8 +19,9 @@
 
     <div class="row">
       <div class="col-md-3"></div>
-      <div class="col-md-6" style="text-align: center; background-color:white; padding-top:20px; color:black">
-        <textarea class="form-control" rows="3" name="styled-textarea" id="styled" placeholder="Enter your text here" onkeyup="textAreaAdjust(this)"></textarea>
+      <div class="col-md-6" id="parent" style="text-align: center; background-color:white; padding-top:20px; color:black">
+        <div class="form-control" id="underlay"></div>
+        <div class="form-control" name="styled-textarea" id="styled" contenteditable="true" data-placeholder="Enter your text here" ></div>
         <br>
       </div>
       <div class="col-md-3"></div>
@@ -29,11 +30,5 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="/javascripts/script.js"></script>
-    <script>
-        function textAreaAdjust(o) {
-        o.style.height = "1px";
-        o.style.height = (25+o.scrollHeight)+"px";
-    }
-    </script>
   </body>
 </html>
