@@ -88,7 +88,7 @@ waihopai
 infosec
 iw
 is
-priavacy
+privacy
 infosec
 reno
 compsec
@@ -632,6 +632,7 @@ delta
 twa
 kiwi
 siliconpimp
+siliconpimps
 lynch
 414
 face
