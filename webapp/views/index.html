@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>[Redacted]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link href="../assets/css/docs.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css">
 
 	<link href="../public/stylesheets/style.css" rel="stylesheet">
 	
@@ -15,13 +15,27 @@
     <body>
 
 	<div class="box">
-		<h1>[Redacted]</h1>
-		<p></p>
+		<div id="main">
+			<h1>[Redacted]</h1>
+			<p></p>
+				<form>
+					<textarea style="width:91%; max-width:91%;" rows="4" id="textarea" placeholder="enter text"></textarea>
+					</br></br>
+					<button type="button" class="btn btn-danger">[redact]</button>
+				</form>
+		</div>
+		<div id="text" hidden>
+			<h1>[Redacted]</h1>
+			</br>
+			<p id="redacted">Redacted twitter text</p>
+			</br>
 			<form>
-				<span><textarea style="width:91%" rows="4" id="textarea">Enter Text</textarea></span>
-				<button type="button" class="btn btn-primary btn-lg" id="button">Large button</button>
+				<button type="button" class="btn btn-primary">retry</button>
 			</form>
-			<br class="clr">
+		</div>
+		
 	</div>
+	
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	</body>
 </html>
