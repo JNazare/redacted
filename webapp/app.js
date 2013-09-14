@@ -28,6 +28,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/api/list', api.list);
 app.post('/api/convert', api.convert);
 
 http.createServer(app).listen(app.get('port'), function(){
