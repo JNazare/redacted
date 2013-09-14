@@ -7,8 +7,8 @@ function repeat (str, n) {
 function censor (words, input, callback) {
 	console.log(input);
 	words.forEach(function (w) {
-		var re = new RegExp("\\b"+w+"\\b", 'gi');
-		input = input.replace(re, '<span class="block">'+w+'</span>'); //repeat("▓", w.length));
+		var re = new RegExp("\\b"+w+"\\b", 'gim');
+		input = input.replace(re, '<span class="block">$&</span>'); //repeat("▓", w.length));
 	});
 	callback(input.replace(/\n/g, "</br>"));
 };
