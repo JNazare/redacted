@@ -39,8 +39,10 @@
     [self addTextFieldsForTweet:model];
     
     tweet = model;
-    [UIView animateWithDuration:0.3 animations:^{
-        [self setAlpha:1.0f];
+    [UIView animateWithDuration:0.3 delay:0.5 options:UIViewAnimationCurveLinear animations:^{
+        [self setAlpha:1.0];
+    } completion:^(BOOL finished) {
+        
     }];
 }
 
@@ -53,7 +55,26 @@
         if([[field.text lowercaseString] isEqualToString:[words[i-10][0] lowercaseString]]) correctGuesses++;
     }
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay!" message:[NSString stringWithFormat:@"You got %i correct",correctGuesses] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    NSString *title;
+    NSString *descriptionText;
+    
+    if (correctGuesses == words.count)
+    {
+        title = [NSString stringWithFormat:@"Great!"];
+        descriptionText = [NSString stringWithFormat:@"You got all %i correct.  A white van will be outside in 10 minutes.",correctGuesses];
+    }
+    else if (correctGuesses != words.count && correctGuesses != 0)
+    {
+        title = [NSString stringWithFormat:@"Close"];
+        descriptionText = [NSString stringWithFormat:@"You got only %i correct, but that's all right.  Keep yourself under the radar.",correctGuesses];
+    }
+    else
+    {
+        title = [NSString stringWithFormat:@"Failure"];
+        descriptionText = [NSString stringWithFormat:@"You didn't get any correct.  Keep playing, but not too much.  They're watching.  Always—"];
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:descriptionText delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     
     [self dismissTextFields];

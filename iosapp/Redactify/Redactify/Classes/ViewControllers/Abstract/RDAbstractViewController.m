@@ -19,7 +19,7 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view setBackgroundColor:Color_Clouds];
+    [self.view setBackgroundColor:Color_MidnightBlue];
 }
 
 @end

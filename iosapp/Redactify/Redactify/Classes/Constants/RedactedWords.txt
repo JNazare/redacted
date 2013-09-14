@@ -3,7 +3,6 @@ infosec
 information security
 information warfare
 iw
-is
 priavacy
 information terrorism
 terrorism defensive information

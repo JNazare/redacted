@@ -46,6 +46,9 @@
     [score setText:@"-"];
     [score setBackgroundColor:Color_Alizarin];
     [score.layer setCornerRadius:score.frame.size.width/2.0];
+    
+    [navBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [navBar setBackgroundColor:Color_PeterRiver];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

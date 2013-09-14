@@ -13,6 +13,7 @@
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet RDRedactedTweetView *redactedTweet;
     
+    IBOutlet UINavigationBar *navBar;
     IBOutlet UILabel *score;
     IBOutlet UILabel *name;
     IBOutlet UILabel *activityBackground;
