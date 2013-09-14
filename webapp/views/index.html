@@ -1,46 +1,38 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-
-
-    <meta charset="utf-8">
+<html>
+  <head>
     <title>[Redacted]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Bubbler+One' rel='stylesheet' type='text/css'>
+    <link href="bootstrap/css/style.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
 
-	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css">
+    <div class="row" style="padding-top:100px">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="text-align: center; padding:20px; color:black">
+        <p style="font-size:50px; color:white"><strong>[REDACTED]</strong></p>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
 
-	<link href="/stylesheets/style.css" rel="stylesheet">
-	
-	
-	  </head>
-    <body>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="text-align: center; background-color:white; padding-top:20px; color:black">
+        <textarea class="form-control" rows="3" name="styled-textarea" id="styled" placeholder="Enter your text here" onkeyup="textAreaAdjust(this)"></textarea>
+        <br>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
 
-	<div class="box">
-		<div id="main">
-			<h1>[Redacted]</h1>
-			<p></p>
-				<form>
-					<textarea style="width:91%; max-width:91%;" rows="4" id="textarea" placeholder="enter text"></textarea>
-					</br></br>
-					<button type="button" class="btn btn-danger" id="button">[redact]</button>
-				</form>
-		</div>
-		<div id="text" hidden>
-			<h1>[Redacted]</h1>
-			</br>
-			<p id="redacted">Redacted twitter text</p>
-			</br>
-			<form>
-				<button type="button" class="btn btn-primary" id="retry">retry</button>
-			</form>
-		</div>
-		
-	</div>
-	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="/javascripts/script.js"></script>
-
-	</body>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        function textAreaAdjust(o) {
+        o.style.height = "1px";
+        o.style.height = (25+o.scrollHeight)+"px";
+    }
+    </script>
+  </body>
 </html>
