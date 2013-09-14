@@ -43,7 +43,7 @@
     [name.layer setCornerRadius:score.frame.size.width/2.0];
     [name setBackgroundColor:Color_Nephritis];
     
-    [score setText:@"-"];
+    [score setText:@"-%"];
     [score setBackgroundColor:Color_Alizarin];
     [score.layer setCornerRadius:score.frame.size.width/2.0];
     
@@ -85,8 +85,26 @@
                              if (timelineData) {
                                  NSLog(@"Timeline Response: %@\n", timelineData);
                                  NSArray *statuses = timelineData[@"statuses"];
-                                 NSDictionary *tweet = statuses[0];
-                                 model = [[RDTweetModel alloc] initWithDictionary:@{ DC_Tweet_Text : tweet[@"text"] }];
+                                 
+                                 NSMutableArray *tweets = [[NSMutableArray alloc] init];
+                                 NSDictionary *tweet;
+                                 RDTweetModel *aModel;
+                                 int redactedWordCount = 0;
+                                 RDTweetModel *modelWithMostRedactedWords;
+                                 
+                                 for (int i = 0; i < statuses.count; i++)
+                                 {
+                                     tweet = statuses[i];git 
+                                     aModel = [[RDTweetModel alloc] initWithDictionary:@{ DC_Tweet_Text : tweet[@"text"] }];
+                                     [tweets addObject:aModel];
+                                     if ( aModel.redactedWords.count > redactedWordCount)
+                                     {
+                                         redactedWordCount = aModel.redactedWords.count;
+                                         modelWithMostRedactedWords = aModel;
+                                     }
+                                 }
+                                 
+                                 model = modelWithMostRedactedWords;
                                  
                                  [self updateToTweet:model];
                              }
