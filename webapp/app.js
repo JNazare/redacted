@@ -5,7 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/api')
+  , api = require('./routes/api')
   , http = require('http')
   , path = require('path');
 
@@ -28,7 +28,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/api/convert', user.convert);
+app.get('/api/list', api.list);
+app.post('/api/convert', api.convert);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

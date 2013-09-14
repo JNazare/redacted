@@ -7,8 +7,8 @@ a {
   color: #00B7FF;
 }
 
-body {background:url(http://subtlepatterns.com/patterns/tweed.png) repeat center 0 #fff;}
-.wrapper{background:url(http://subtlepatterns.com/patterns/tweed.png) repeat center 0 #222;padding:280px 0 2px;}
+body {background:url(/images/tweed.png) repeat center 0 #fff;}
+.wrapper{background:url(/images/tweed.png) repeat center 0 #222;padding:280px 0 2px;}
 
 .box{padding:18px 18px 14px; max-width:444px; text-align:center; border:0px solid #fff;margin:0 auto -80px; min-height:150px; box-shadow: 0 0 300px rgb(0, 0, 0);}
 .clr{clear:both;}

@@ -1,0 +1,13 @@
+body
+{
+	background-color: black;
+	color: white;
+	font-family: 'Bubbler One', sans-serif;
+}
+
+textarea#styled {
+	border: none;
+	box-shadow: none;
+	font-size:30px;
+	overflow: hidden;
+}
