@@ -316,7 +316,8 @@ passwd
 competitor
 eo
 chan
-alouette,executive
+alouette
+executive
 event security
 mace
 cap-stun
