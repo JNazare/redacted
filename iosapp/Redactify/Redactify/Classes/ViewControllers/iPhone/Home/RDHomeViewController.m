@@ -94,7 +94,7 @@
                                  
                                  for (int i = 0; i < statuses.count; i++)
                                  {
-                                     tweet = statuses[i];git 
+                                     tweet = statuses[i];
                                      aModel = [[RDTweetModel alloc] initWithDictionary:@{ DC_Tweet_Text : tweet[@"text"] }];
                                      [tweets addObject:aModel];
                                      if ( aModel.redactedWords.count > redactedWordCount)
