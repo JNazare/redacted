@@ -15,11 +15,15 @@ function censor (words, input, callback) {
 
 var tl=new Array(
 "Welcome! ",
-"Our goal is to inform everyone about censorship from the NSA. ",
+"Our goal is to inform everyone about words on the NSA's watchlist. ",
+"We wouldn't want you to accidentally use words such as ",
+"archives, MIT, jasmine, or bubba the love sponge. ",
 "Make sure you have a secure internet connection, ",
-"otherwise watch for the CIA white van outside. ",
+"and be sure to check your text here before posting it online, ",
+"otherwise watch for the anonymous white van outside. ",
 "If you have an idea to promote internet privacy or freedom ",
-"let us know!"
+"let us know!",
+" - Siliconpimps "
 );
 var speed=60;
 var index=0; text_pos=0;
@@ -35,6 +39,10 @@ $( document ).ready(function() {
 	});
 
 	$("#styled").click(function(){
+		if(!clicked){
+			$("#styled").html("");
+			$("#underlay").html("");
+		}
 		clicked = true;
 		$("#styled").attr('data-placeholder', "");
 	});
