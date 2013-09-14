@@ -9,6 +9,7 @@
 #import "RDRedactedTweetView.h"
 
 #import "RDTweetModel.h"
+#import "RDRedacterManager.h"
 
 @interface RDRedactedTweetView() {
 @private
@@ -39,7 +40,7 @@
     [self addTextFieldsForTweet:model];
     
     tweet = model;
-    [UIView animateWithDuration:0.3 delay:0.5 options:UIViewAnimationCurveLinear animations:^{
+    [UIView animateWithDuration:0.3 delay:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
         [self setAlpha:1.0];
     } completion:^(BOOL finished) {
         
@@ -48,11 +49,16 @@
 
 -(NSArray*)grade {
     NSArray *words = [tweet redactedWords];
-
+    NSMutableArray *guesses = [NSMutableArray array];
+    
     int correctGuesses = 0;
     for(int i = 10; i < lastTextFieldTag+1; i++) {
         UITextField *field = (UITextField*)[self viewWithTag:i];
-        if([[field.text lowercaseString] isEqualToString:[words[i-10][0] lowercaseString]]) correctGuesses++;
+        if([[field.text lowercaseString] isEqualToString:[words[i-10][0] lowercaseString]]) {
+            correctGuesses++;
+            [guesses addObject:@"YES"];
+        }
+        else [guesses addObject:@"NO"];
     }
     
     NSString *title;
@@ -78,7 +84,37 @@
     [alert show];
     
     [self dismissTextFields];
-    [textLabel setText:[tweet tweetText]];
+    
+    
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:[tweet tweetText]];
+    [attrStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Light" size:17.0] range:NSMakeRange(0, attrStr.length-1)];
+    
+    RDRedacterManager *manager = [RDRedacterManager initializeRedacterManager];
+    int guess = 0;
+    NSString *lowercase = [[tweet tweetText] lowercaseString];
+    for(NSString *word in [manager flaggedWords]) {
+        NSString *regexStr = [NSString stringWithFormat:@"\\b%@\\b",[word lowercaseString]];
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:0 error:NULL];
+        NSArray *matches = [regex matchesInString:lowercase options:0 range:NSMakeRange(0, [lowercase length])];
+        
+        for(int i = 0; i < [matches count]; i++) {
+            NSLog(@"Match");
+            NSTextCheckingResult *match = matches[i];
+            NSRange range = [match range];
+            
+            NSString *guessOutcome = guesses[guess];
+            [attrStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17.0] range:range];
+            
+            if([guessOutcome isEqualToString:@"NO"]) [attrStr addAttribute:NSForegroundColorAttributeName value:Color_Alizarin range:range];
+            else [attrStr addAttribute:NSForegroundColorAttributeName value:Color_Nephritis range:range];
+            
+            guess++;
+        }
+    }
+    
+    
+    
+    [textLabel setAttributedText:attrStr];
     
     return @[[NSNumber numberWithInt:correctGuesses],[NSNumber numberWithInt:lastTextFieldTag-10+1]];
 }
@@ -126,7 +162,7 @@
         if(![w isEqualToString:[substring stringByAppendingString:String_Redacted]]) [words removeObjectAtIndex:[words count]-2];
         
         BOOL done = NO;
-        words = [[words reverseObjectEnumerator] allObjects];
+        words = [NSMutableArray arrayWithArray:[[words reverseObjectEnumerator] allObjects]];
         
         
         for(NSString *word in words) {
@@ -182,7 +218,7 @@
     if(textField.tag == lastTextFieldTag) [self endEditing:YES];
     else {
         [textField resignFirstResponder];
-        UITextField *field = [self viewWithTag:textField.tag+1];
+        UITextField *field = (UITextField*)[self viewWithTag:textField.tag+1];
         [field becomeFirstResponder];
     }
     return YES;

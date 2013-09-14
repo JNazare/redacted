@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface RDRedacterManager : NSObject
+@property(nonatomic, strong, readonly) NSMutableArray *flaggedWords;
 
 +(id)initializeRedacterManager;
 

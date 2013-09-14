@@ -9,7 +9,6 @@
 #import "RDRedacterManager.h"
 
 @interface RDRedacterManager() {
-    NSMutableArray *flaggedWords;
 }
 
 @end
@@ -33,12 +32,12 @@ static RDRedacterManager *sharedRedacter = nil;
         NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSArray *words = [dataStr componentsSeparatedByString:@"\n"];
         
-        flaggedWords = [[NSMutableArray alloc] init];
+        _flaggedWords = [[NSMutableArray alloc] init];
         for(NSString *word in words) {
-            if(![word isEqualToString:@""]) [flaggedWords addObject:word];
+            if(![word isEqualToString:@""]) [_flaggedWords addObject:word];
         }
         
-        NSArray *sortedFlaggedWords = [flaggedWords sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSArray *sortedFlaggedWords = [_flaggedWords sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
             NSString *word1 = (NSString*)obj1;
             NSString *word2 = (NSString*)obj2;
             if([word1 length] == [word2 length]) return NSOrderedSame;
@@ -46,7 +45,7 @@ static RDRedacterManager *sharedRedacter = nil;
             else return NSOrderedDescending;
         }];
     
-        flaggedWords = [NSMutableArray arrayWithArray:sortedFlaggedWords];
+        _flaggedWords = [NSMutableArray arrayWithArray:sortedFlaggedWords];
     }
     return self;
 }
@@ -58,7 +57,7 @@ static RDRedacterManager *sharedRedacter = nil;
     NSString *lowercaseStr = [string lowercaseString];
     NSMutableArray *wordsAndIndexes = [NSMutableArray array];
     
-    for(NSString *word in flaggedWords) {
+    for(NSString *word in _flaggedWords) {
         NSString *regexStr = [NSString stringWithFormat:@"\\b%@\\b",word];
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:0 error:NULL];
         NSArray *matches = [regex matchesInString:lowercaseStr options:0 range:NSMakeRange(0, [lowercaseStr length])];
