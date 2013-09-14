@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 function repeat (str, n) {
-	return Array(n + 1).join('\n').split('').map(function () { return str; });
+	return Array(n + 1).join('\n').split('').map(function () { return str; }).join("");
 }
 
 var words = fs.readFileSync("blacklist.txt", "utf-8").split(/\n/);
