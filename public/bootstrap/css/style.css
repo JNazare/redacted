@@ -2,12 +2,45 @@ body
 {
 	background-color: black;
 	color: white;
-	font-family: 'Bubbler One', sans-serif;
+	font-family: 'Aldrich', sans-serif;
 }
 
-textarea#styled {
+#styled {
+	text-align: left;
+	position: relative;
+	top: -34px;
+	border: none;
+	box-shadow: none;
+	background-color: rgba(255,255,255,0);
+	font-size:30px;
+	overflow: visible;
+	color: black;
+	z-index: 2;
+}
+
+div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
+    content: attr(data-placeholder);
+    float: left;
+    margin-left: 2px;
+    color: #b3b3b3;
+}
+
+#parent {
+	min-height: 150px;
+	-webkit-transition: height 0.25s ease-in-out;
+	background-color: white;
+}
+
+#underlay {
+	text-align: left;
+	color:black;
 	border: none;
 	box-shadow: none;
 	font-size:30px;
-	overflow: hidden;
+	overflow: visible;
+	z-index: -1;
+}
+
+span.block {
+	background-color: black;
 }

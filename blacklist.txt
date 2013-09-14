@@ -1,25 +1,100 @@
-waihopai
-infosec
+bubba the love sponge
+terrorism defensive information
+defense information warfare
+offensive information warfare
+national information infrastructure
+secure internet connections
+secure internet connection
+counter terrorism security
+cable & wireless
+macintosh internet security
+juiliett class submarine
+weekly world news
 information security
 information warfare
+information terrorism
+offensive information
+computer terrorism
+defcon v
+secert service
+white house
+aol tos
+active x
+compsec 97
+steve case
+military intelligence
+spook words
+exon shell
+22nd sas
+s.e.t. team
+tdm. suklo
+texta. elf
+domestic disruption
+bletchley park
+rapid reaction
+corporate security
+security consulting
+high security
+security evaluation
+electronic surveillance
+covert video
+lock picking
+beyond hope
+2600 magazine
+event security
+fax encryption
+white noise
+pink noise
+top secret
+macintosh security
+macintosh firewalls
+unix security
+vip protection
+satellite imagery
+data havens
+industrial espionage
+industrial intelligence
+ingram mac-10
+kilo class
+rand corporation
+blacklisted 411
+internet underground
+retinal fetish
+chicago posse
+spook keywords
+world domination
+ft. meade
+wire transfer
+fort meade
+satellite phones
+sears tower
+delta force
+secure shell
+gray data
+sugar grove
+pine gap
+credit card
+william gates
+pgp 2.6.2.
+pgp 5.0i
+pgp 5.1
+eternity server
+red cell
+glock 26
+chameleon man
+rail gun
+pgp 5.53
+waihopai
+infosec
 iw
 is
 priavacy
-information terrorism
-terrorism defensive information
-defense information warfare
-offensive information
-offensive information warfare
-national information infrastructure
 infosec
 reno
 compsec
-computer terrorism
 firewalls
-secure internet connections
 iss
 passwords
-defcon v
 hackers
 encryption
 espionage
@@ -29,11 +104,9 @@ cia
 s/key
 ssl
 fbi
-secert service
 usss
 defcon
 military
-white house
 undercover
 nccs
 mayfly
@@ -43,7 +116,6 @@ rsa
 perl-rsa
 msnbc
 aol
-aol tos
 cis
 cbot
 aimsx
@@ -69,16 +141,12 @@ canslo
 cbnrc
 cida
 java
-active x
-compsec 97
 llc
 dera
 mavricks
 meta-hackers
-steve case
 tools
 telex
-military intelligence
 scully
 flame
 infowar
@@ -90,7 +158,6 @@ jack
 investigation
 isaca
 ncsa
-spook words
 verisign
 secure
 asio
@@ -169,7 +236,6 @@ masuda
 forte
 at
 gign
-exon shell
 cqb
 conus
 ctu
@@ -177,7 +243,6 @@ rcmp
 gru
 sasr
 gsg-9
-22nd sas
 geos
 eada
 bbe
@@ -211,7 +276,6 @@ d-11
 sert
 vip
 arc
-s.e.t. team
 mp5k
 drec
 devgrp
@@ -226,10 +290,8 @@ psac
 ptt
 rfi
 sigdasys
-tdm. suklo
 suslo
 telint
-texta. elf
 lf
 mf
 vhf
@@ -238,33 +300,24 @@ shf
 sasp
 wank
 colonel
-domestic disruption
 smuggle
 15kg
 nitrate
 pretoria
 m-14
 enigma
-bletchley park
 clandestine
 nkvd
 argus
 afsatcom
 cqb
 nvd
-counter terrorism security
-rapid reaction
-corporate security
 police
 sniper
 pps
 asis
 aslet
 tscm
-security consulting
-high security
-security evaluation
-electronic surveillance
 mi-17
 counterterrorism
 spies
@@ -305,20 +358,15 @@ fx
 fxr
 imf
 pocsag
-covert video
 intiso
 r00t
-lock picking
-beyond hope
 csystems
 passwd
-2600 magazine
 competitor
 eo
 chan
 alouette
 executive
-event security
 mace
 cap-stun
 stakeout
@@ -342,26 +390,16 @@ mit
 rit
 time
 msee
-cable & wireless
 cse
 embassy
 eta
 porno
 fax
 finks
-fax encryption
-white noise
-pink noise
 cra
 m.p.r.i.
-top secret
 mossberg
 50bmg
-macintosh security
-macintosh internet security
-macintosh firewalls
-unix security
-vip protection
 sig
 sweep
 medco
@@ -374,7 +412,6 @@ harvard
 1080h
 sws
 asset
-satellite imagery
 force
 cypherpunks
 coderpunks
@@ -398,7 +435,6 @@ subversives
 slip
 toad
 fish
-data havens
 unix
 elvis
 quiche
@@ -407,15 +443,11 @@ natia
 natoa
 sneakers
 counterintelligence
-industrial espionage
 pi
 tsci
-industrial intelligence
 h.n.p.
-juiliett class submarine
 locks
 loch
-ingram mac-10
 sigvoice
 ssa
 e.o.d.
@@ -427,7 +459,6 @@ oss
 blowpipe
 ccs
 gsa
-kilo class
 squib
 primacord
 rsp
@@ -450,7 +481,6 @@ s.a.i.c.
 minox
 keyhole
 sar
-rand corporation
 wackenhutt
 eo
 wackendude
@@ -461,26 +491,19 @@ ctu
 botux
 virii
 ccc
-blacklisted 411
-internet underground
 xs4all
-retinal fetish
 fetish
 yobie
 ctp
 cato
 phon-e
-chicago posse
 l0ck
-spook keywords
 pla
 tdyc
 w3
 cud
 cdc
-weekly world news
 zen
-world domination
 dead
 gru
 m72750
@@ -488,12 +511,9 @@ salsa
 blowfish
 gorelick
 glock
-ft. meade
 press-release
 indigo
-wire transfer
 e-cash
-bubba the love sponge
 digicash
 zip
 swat
@@ -513,25 +533,20 @@ texas
 jihad
 sdi
 uzi
-fort meade
 supercomputer
 bullion
 blackmednet
 propaganda
-satellite phones
 planet-1
 cryptanalysis
 nuclear
 fbi
 panama
 fissionable
-sears tower
 norad
-delta force
 seal
 virtual
 dolch
-secure shell
 screws
 black-ops
 area51
@@ -559,12 +574,10 @@ gorilla
 bob
 pseudonyms
 mitm
-gray data
 vlsi
 mega
 leitrim
 yakima
-sugar grove
 cowboy
 gist
 8182
@@ -578,7 +591,6 @@ veggie
 morwenstow
 consul
 oratory
-pine gap
 menwith
 mantis
 dsd
@@ -597,7 +609,6 @@ roswell
 esn
 cos
 e.t.
-credit card
 b9
 fraud
 assasinate
@@ -612,7 +623,6 @@ whitewater
 mod
 york
 plutonium
-william gates
 clone
 batf
 sgdn
@@ -621,16 +631,12 @@ atlas
 delta
 twa
 kiwi
-pgp 2.6.2.
-pgp 5.0i
-pgp 5.1
 siliconpimp
 lynch
 414
 face
 pixar
 iridf
-eternity server
 skytel
 yukon
 templeton
@@ -648,8 +654,6 @@ eub
 usp
 pcs
 nro
-red cell
-glock 26
 snuffle
 patel
 package
@@ -693,11 +697,9 @@ sap
 oau
 pfs
 aladdin
-chameleon man
 hutsul
 cesid
 bess
-rail gun
 peering
 312
 nb
@@ -714,7 +716,6 @@ halibut
 sonangol
 flu
 loin
-pgp 5.53
 eg&g
 aiews
 amw
