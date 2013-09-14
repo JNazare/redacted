@@ -41,6 +41,11 @@ div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
 	z-index: -1;
 }
 
+#foot {
+	padding-top: 20px;
+	text-align: center;
+}
+
 span.block {
 	background-color: black;
 }

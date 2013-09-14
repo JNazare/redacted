@@ -88,7 +88,7 @@ waihopai
 infosec
 iw
 is
-priavacy
+privacy
 infosec
 reno
 compsec
