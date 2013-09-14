@@ -12,11 +12,15 @@
 #import "RDTweetModel.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface RDHomeViewController() {
 @private
     RDTweetModel *model;
     ACAccountStore *accountStore;
+    
+    int correct;
+    int total;
 }
 
 @end
@@ -27,13 +31,29 @@
     [super viewDidLoad];
     [redactedTweet setAlpha:0.0f];
     
+    [nextButton setAlpha:0.0f];
     accountStore = [[ACAccountStore alloc] init];
+    
+    correct = 0;
+    total = 0;
+    
+    [activityBackground.layer setCornerRadius:score.frame.size.width/2.0];
+    [activityBackground setBackgroundColor:Color_Alizarin];
+    
+    [name.layer setCornerRadius:score.frame.size.width/2.0];
+    [name setBackgroundColor:Color_Nephritis];
+    
+    [score setText:@"-"];
+    [score setBackgroundColor:Color_Alizarin];
+    [score.layer setCornerRadius:score.frame.size.width/2.0];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [activityIndicator stopAnimating];
+    [activityBackground setAlpha:0.5f];
+    
     [self getNewTweet];
 
 }
@@ -63,7 +83,7 @@
                                  NSLog(@"Timeline Response: %@\n", timelineData);
                                  NSArray *statuses = timelineData[@"statuses"];
                                  NSDictionary *tweet = statuses[0];
-                                 model = [[RDTweetModel alloc] initWithDictionary:@{ DC_Tweet_Text :tweet[@"text"] }];
+                                 model = [[RDTweetModel alloc] initWithDictionary:@{ DC_Tweet_Text : tweet[@"text"] }];
                                  
                                  [self updateToTweet:model];
                              }
@@ -91,28 +111,50 @@
 #pragma mark Tweet Methods
 
 -(void)getNewTweet {
+    [gradeButton setAlpha:0.5f];
+    [gradeButton setUserInteractionEnabled:NO];
+    
     [activityIndicator startAnimating];
+    [activityBackground setAlpha:1.0f];
+    
     [self authAndGetTweets];
 }
 
 -(void)updateToTweet:(RDTweetModel*)tweet {
     [activityIndicator stopAnimating];
+    [activityBackground setAlpha:0.5f];
+    
     NSLog(@"Tweet: %@",[tweet tweetText]);
     [redactedTweet presentTweet:tweet];
     
-    
+    [gradeButton setAlpha:1.0f];
+    [gradeButton setUserInteractionEnabled:YES];
 }
 
 #pragma mark -
 #pragma mark IBAction Methods
 
 -(IBAction)gradePushed:(id)sender {
-    [redactedTweet grade];
+    NSArray *arr = [redactedTweet grade];
+    correct += [arr[0] intValue];
+    total += [arr[1] intValue];
+    
+    if(total == 0) [score setText:@"-"];
+    else {
+        int percent = (int)100.0*((float)correct / (float)total);
+        [score setText:[NSString stringWithFormat:@"%i%%",percent]];
+    }
+    
+    [gradeButton setAlpha:0.5f];
+    [gradeButton setUserInteractionEnabled:NO];
+    
+    [nextButton setAlpha:1.0f];
 }
 
 -(IBAction)nextPushed:(id)sender {
     [redactedTweet dismiss];
     [self getNewTweet];
+    [nextButton setAlpha:0.0f];
 }
 
 @end

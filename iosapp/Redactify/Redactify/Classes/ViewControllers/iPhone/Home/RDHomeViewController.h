@@ -12,6 +12,13 @@
 @interface RDHomeViewController : RDAbstractViewController {
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet RDRedactedTweetView *redactedTweet;
+    
+    IBOutlet UILabel *score;
+    IBOutlet UILabel *name;
+    IBOutlet UILabel *activityBackground;
+    
+    IBOutlet UIButton *gradeButton;
+    IBOutlet UIButton *nextButton;
 }
 
 #pragma mark -

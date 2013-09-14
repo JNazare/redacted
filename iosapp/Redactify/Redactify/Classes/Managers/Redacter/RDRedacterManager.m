@@ -72,7 +72,7 @@ static RDRedacterManager *sharedRedacter = nil;
             range.location += offset;
             lowercaseStr = [lowercaseStr stringByReplacingCharactersInRange:range withString:String_Redacted];
             string = [string stringByReplacingCharactersInRange:range withString:String_Redacted];
-            offset += range.length - [String_Redacted length];
+            offset -= range.length - [String_Redacted length];
         }
     }
     

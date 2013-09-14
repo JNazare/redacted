@@ -17,7 +17,7 @@
 #pragma mark Display Methods
 
 -(void)presentTweet:(RDTweetModel*)model;
--(void)grade;
+-(NSArray*)grade;
 -(void)dismiss;
 
 @end

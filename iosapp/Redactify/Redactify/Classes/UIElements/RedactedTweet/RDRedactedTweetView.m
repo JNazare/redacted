@@ -22,7 +22,7 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
     if(self = [super initWithCoder:aDecoder]) {
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self setBackgroundColor:Color_Silver];
     }
     return self;
 }
@@ -41,11 +41,10 @@
     tweet = model;
     [UIView animateWithDuration:0.3 animations:^{
         [self setAlpha:1.0f];
-        NSLog(@"Animate");
     }];
 }
 
--(void)grade {
+-(NSArray*)grade {
     NSArray *words = [tweet redactedWords];
 
     int correctGuesses = 0;
@@ -56,6 +55,11 @@
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay!" message:[NSString stringWithFormat:@"You got %i correct",correctGuesses] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
+    
+    [self dismissTextFields];
+    [textLabel setText:[tweet tweetText]];
+    
+    return @[[NSNumber numberWithInt:correctGuesses],[NSNumber numberWithInt:lastTextFieldTag-10+1]];
 }
 
 -(void)dismiss {
@@ -86,30 +90,26 @@
         NSString *substring = [[model redacedText] substringToIndex:range.location];
         CGSize size = [self sizeForText:substring withWidth:textLabel.frame.size.width];
         
+        NSLog(@"Substring: %@",substring);
         NSMutableArray *words = [NSMutableArray arrayWithArray:[substring componentsSeparatedByString:@" "]];
         [words removeObject:@""];
         int count = [words count];
-        NSLog(@"Substring: %@",substring);
+
         [words addObject:String_Redacted];
         for(int i = 0; i < count; i++) {
             if(2*i+1 < [words count]) [words insertObject:@" " atIndex:2*i+1];
             else [words addObject:@" "];
         }
-        NSLog(@"Substring: -%@-",[substring substringWithRange:NSMakeRange([substring length]-1, 1)]);
         
+        NSString *w = [words componentsJoinedByString:@""];
+        if(![w isEqualToString:[substring stringByAppendingString:String_Redacted]]) [words removeObjectAtIndex:[words count]-2];
         
         BOOL done = NO;
         words = [[words reverseObjectEnumerator] allObjects];
         
-        NSLog(@"Words: %@",words);
-        if([[substring substringWithRange:NSMakeRange([substring length]-1, 1)] isEqualToString:@" "])  {
-            [words removeLastObject];
-        }
-        NSLog(@"Words: %@",words);
         
         for(NSString *word in words) {
             if(!done) {
-                NSLog(@"Word: %@ (%i)",word,[word length]);
                 startIndex -= [word length];
                 NSString *sub = [[model redacedText] substringToIndex:startIndex];
                 CGSize s = [self sizeForText:sub withWidth:textLabel.frame.size.width];
@@ -119,13 +119,10 @@
             }
         }
         
-        NSLog(@"Start: %i and end: %i",startIndex,endIndex);
-        
         substring = [[model redacedText] substringWithRange:NSMakeRange(startIndex, endIndex-startIndex)];
         CGSize newsize = [substring sizeWithFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:17.0] constrainedToSize:CGSizeMake(MAXFLOAT, 23.0) lineBreakMode:NSLineBreakByWordWrapping];
-        NSLog(@"Str: -%@- Width: %f and height: %f",substring,newsize.width,newsize.height);
         
-
+        NSLog(@"Substring: %@",substring);
         CGSize subsize = [self sizeForText:substring withWidth:textLabel.frame.size.width];
         CGSize checksize = [self sizeForText:[substring stringByAppendingString:String_Redacted] withWidth:textLabel.frame.size.width];
         
@@ -134,14 +131,15 @@
             newsize.width = 0;
         }
         
-        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(13+newsize.width, size.height-10, 75, 22)];
-        [textField setBackgroundColor:[UIColor whiteColor]];
+        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(4+newsize.width, size.height-17, 75, 22)];
+        [textField setBackgroundColor:[UIColor blackColor]];
         [textField setDelegate:self];
         [textField setTag:10+i];
         if(i == [matches count]-1) [textField setReturnKeyType:UIReturnKeyDone];
         else [textField setReturnKeyType:UIReturnKeyNext];
         [textField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
         [textField setAutocorrectionType:UITextAutocorrectionTypeNo];
+        [textField setTextColor:[UIColor whiteColor]];
         
         UIView *border = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 4, textField.frame.size.height)];
         [textField setLeftView:border];
@@ -151,7 +149,6 @@
         [self addSubview:textField];
     }
     lastTextFieldTag = 10+[matches count]-1;
-    NSLog(@"DONE!!!");
 }
 
 -(void)dismissTextFields {

@@ -25,8 +25,6 @@
 		6C9FB78717E404E600714DFA /* RedactifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB78617E404E600714DFA /* RedactifyTests.m */; };
 		6C9FB7A017E4085000714DFA /* RDAbstractRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB79F17E4085000714DFA /* RDAbstractRequest.m */; };
 		6C9FB7A317E4086400714DFA /* RDAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB7A217E4086400714DFA /* RDAbstractViewController.m */; };
-		6C9FB7A817E409EC00714DFA /* tweed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FB7A717E409EC00714DFA /* tweed.png */; };
-		6C9FB7AA17E409F100714DFA /* tweed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FB7A917E409F100714DFA /* tweed@2x.png */; };
 		6C9FB7AE17E40A1600714DFA /* RDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB7AD17E40A1600714DFA /* RDHomeViewController.m */; };
 		6C9FB7B217E40C5F00714DFA /* RDRedactedTweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB7B117E40C5F00714DFA /* RDRedactedTweetView.m */; };
 		6C9FB7B717E40F5900714DFA /* RedactedWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FB7B617E40F5900714DFA /* RedactedWords.txt */; };
@@ -35,6 +33,8 @@
 		6C9FB7C617E43C9300714DFA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9FB7C517E43C9300714DFA /* Accounts.framework */; };
 		6C9FB7C917E43CF400714DFA /* RDTweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB7C817E43CF400714DFA /* RDTweetModel.m */; };
 		6C9FB7CB17E43D9100714DFA /* RDTweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB7C817E43CF400714DFA /* RDTweetModel.m */; };
+		6C9FB7CF17E4CF1B00714DFA /* RDMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FB7CE17E4CF1B00714DFA /* RDMenuButton.m */; };
+		6C9FB7D117E4CF3B00714DFA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9FB7D017E4CF3B00714DFA /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +74,6 @@
 		6C9FB79F17E4085000714DFA /* RDAbstractRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RDAbstractRequest.m; path = Classes/Requests/Abstract/RDAbstractRequest.m; sourceTree = "<group>"; };
 		6C9FB7A117E4086400714DFA /* RDAbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RDAbstractViewController.h; path = Classes/ViewControllers/Abstract/RDAbstractViewController.h; sourceTree = "<group>"; };
 		6C9FB7A217E4086400714DFA /* RDAbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RDAbstractViewController.m; path = Classes/ViewControllers/Abstract/RDAbstractViewController.m; sourceTree = "<group>"; };
-		6C9FB7A717E409EC00714DFA /* tweed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tweed.png; path = Images/Standard/tweed.png; sourceTree = "<group>"; };
-		6C9FB7A917E409F100714DFA /* tweed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tweed@2x.png"; path = "Images/Retina/tweed@2x.png"; sourceTree = "<group>"; };
 		6C9FB7AC17E40A1600714DFA /* RDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RDHomeViewController.h; path = Classes/ViewControllers/iPhone/Home/RDHomeViewController.h; sourceTree = "<group>"; };
 		6C9FB7AD17E40A1600714DFA /* RDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RDHomeViewController.m; path = Classes/ViewControllers/iPhone/Home/RDHomeViewController.m; sourceTree = "<group>"; };
 		6C9FB7B017E40C5F00714DFA /* RDRedactedTweetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RDRedactedTweetView.h; path = Classes/UIElements/RedactedTweet/RDRedactedTweetView.h; sourceTree = "<group>"; };
@@ -87,6 +85,9 @@
 		6C9FB7C517E43C9300714DFA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6C9FB7C717E43CF400714DFA /* RDTweetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RDTweetModel.h; path = Classes/Models/Tweet/RDTweetModel.h; sourceTree = "<group>"; };
 		6C9FB7C817E43CF400714DFA /* RDTweetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RDTweetModel.m; path = Classes/Models/Tweet/RDTweetModel.m; sourceTree = "<group>"; };
+		6C9FB7CD17E4CF1B00714DFA /* RDMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RDMenuButton.h; path = Classes/UIElements/Button/RDMenuButton.h; sourceTree = "<group>"; };
+		6C9FB7CE17E4CF1B00714DFA /* RDMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RDMenuButton.m; path = Classes/UIElements/Button/RDMenuButton.m; sourceTree = "<group>"; };
+		6C9FB7D017E4CF3B00714DFA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9FB7D117E4CF3B00714DFA /* QuartzCore.framework in Frameworks */,
 				6C9FB7C617E43C9300714DFA /* Accounts.framework in Frameworks */,
 				6C9FB7C417E43C4B00714DFA /* Social.framework in Frameworks */,
 				6C9FB75317E404E600714DFA /* UIKit.framework in Frameworks */,
@@ -118,6 +120,7 @@
 		6C9FB74617E404E600714DFA = {
 			isa = PBXGroup;
 			children = (
+				6C9FB7D017E4CF3B00714DFA /* QuartzCore.framework */,
 				6C9FB7C517E43C9300714DFA /* Accounts.framework */,
 				6C9FB7C317E43C4B00714DFA /* Social.framework */,
 				6C9FB75817E404E600714DFA /* Redactify */,
@@ -213,6 +216,7 @@
 		6C9FB79117E4058A00714DFA /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				6C9FB7CC17E4CF0B00714DFA /* Button */,
 				6C9FB7AF17E40B4900714DFA /* RedactedTweet */,
 			);
 			name = UIElements;
@@ -295,7 +299,6 @@
 		6C9FB7A517E409E000714DFA /* Standard */ = {
 			isa = PBXGroup;
 			children = (
-				6C9FB7A717E409EC00714DFA /* tweed.png */,
 			);
 			name = Standard;
 			sourceTree = "<group>";
@@ -303,7 +306,6 @@
 		6C9FB7A617E409E700714DFA /* Retina */ = {
 			isa = PBXGroup;
 			children = (
-				6C9FB7A917E409F100714DFA /* tweed@2x.png */,
 			);
 			name = Retina;
 			sourceTree = "<group>";
@@ -366,6 +368,15 @@
 				6C9FB7C817E43CF400714DFA /* RDTweetModel.m */,
 			);
 			name = Tweet;
+			sourceTree = "<group>";
+		};
+		6C9FB7CC17E4CF0B00714DFA /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				6C9FB7CD17E4CF1B00714DFA /* RDMenuButton.h */,
+				6C9FB7CE17E4CF1B00714DFA /* RDMenuButton.m */,
+			);
+			name = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,8 +457,6 @@
 				6C9FB76917E404E600714DFA /* Default-568h@2x.png in Resources */,
 				6C9FB76C17E404E600714DFA /* MainStoryboard_iPhone.storyboard in Resources */,
 				6C9FB76F17E404E600714DFA /* MainStoryboard_iPad.storyboard in Resources */,
-				6C9FB7A817E409EC00714DFA /* tweed.png in Resources */,
-				6C9FB7AA17E409F100714DFA /* tweed@2x.png in Resources */,
 				6C9FB7B717E40F5900714DFA /* RedactedWords.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +500,7 @@
 				6C9FB7B217E40C5F00714DFA /* RDRedactedTweetView.m in Sources */,
 				6C9FB7CB17E43D9100714DFA /* RDTweetModel.m in Sources */,
 				6C9FB7BE17E40FAA00714DFA /* RDRedacterManager.m in Sources */,
+				6C9FB7CF17E4CF1B00714DFA /* RDMenuButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

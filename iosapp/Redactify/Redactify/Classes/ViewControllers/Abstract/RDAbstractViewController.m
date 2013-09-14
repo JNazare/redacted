@@ -19,8 +19,7 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    UIColor *color = [UIColor colorWithPatternImage:[UIImage imageNamed:Image_ViewBackground]];
-    [self.view setBackgroundColor:color];
+    [self.view setBackgroundColor:Color_Clouds];
 }
 
 @end

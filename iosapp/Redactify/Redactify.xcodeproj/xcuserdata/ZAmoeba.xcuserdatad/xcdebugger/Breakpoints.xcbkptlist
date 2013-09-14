@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Redactify/Classes/ViewControllers/iPhone/Home/RDHomeViewController.m"
-         timestampString = "400836671.955506"
+         timestampString = "400873185.422418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-updateToTweet:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Redactify/Classes/ViewControllers/iPhone/Home/RDHomeViewController.m"
-         timestampString = "400836656.426879"
+         timestampString = "400873185.422418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "103"
-         endingLineNumber = "103"
+         startingLineNumber = "130"
+         endingLineNumber = "130"
          landmarkName = "-updateToTweet:"
          landmarkType = "5">
       </FileBreakpoint>
